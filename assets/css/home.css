@@ -91,9 +91,17 @@
 
 .panel-shot img {
   width: 100%;
+  display: block;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.panel-shot a:hover img,
+.panel-shot a:focus-visible img {
+  box-shadow: var(--shadow-xl, var(--shadow-lg));
+  transform: translateY(-2px);
 }
 
 .panel-shot-badge {
