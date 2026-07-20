@@ -105,6 +105,8 @@
   align-items: center;
   gap: 14px;
   color: var(--navy-950);
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .brand img {
@@ -124,6 +126,7 @@
   flex-direction: column;
   gap: 2px;
   line-height: 1;
+  min-width: 0;
 }
 
 .brand-name {
@@ -141,6 +144,8 @@
   text-transform: uppercase;
   color: var(--slate-600);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 900px) {
@@ -156,14 +161,7 @@
     font-size: 1.35rem;
   }
   .brand-tagline {
-    font-size: 0.64rem;
-    white-space: normal;
-  }
-}
-
-@media (max-width: 420px) {
-  .brand-tagline {
-    display: none;
+    font-size: 0.6rem;
   }
 }
 
@@ -247,19 +245,42 @@
   .nav-toggle {
     display: flex;
   }
-  .nav-actions .btn-secondary {
-    display: none;
+  .nav-actions {
+    gap: 8px;
   }
-  .nav-links-login {
-    display: block;
-    margin-top: 6px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 4px;
-    font-weight: 700;
-    color: var(--accent-strong);
+  .nav-actions .btn {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .site-header .brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand-name {
+    font-size: 1.1rem;
+  }
+  .brand-tagline {
+    font-size: 0.56rem;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .nav-actions .btn {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+  .nav-toggle {
+    padding: 6px;
+  }
+  .nav-toggle span {
+    width: 18px;
   }
 }
 
