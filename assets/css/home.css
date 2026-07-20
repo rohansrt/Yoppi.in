@@ -89,6 +89,11 @@
   max-width: 560px;
 }
 
+.panel-shot-link {
+  position: relative;
+  display: block;
+}
+
 .panel-shot img {
   width: 100%;
   display: block;
@@ -98,8 +103,8 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.panel-shot a:hover img,
-.panel-shot a:focus-visible img {
+.panel-shot-link:hover img,
+.panel-shot-link:focus-visible img {
   box-shadow: var(--shadow-xl, var(--shadow-lg));
   transform: translateY(-2px);
 }
