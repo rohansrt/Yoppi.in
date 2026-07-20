@@ -181,6 +181,10 @@
   color: var(--accent-strong);
 }
 
+.plan-book-btn {
+  margin-top: 16px;
+}
+
 /* Featured (middle) plan — dark, matches deck's alternating layout */
 .plan-card--featured {
   background: var(--navy-950);

@@ -6,6 +6,10 @@
       e.preventDefault();
       tabs.forEach(function (t) { t.classList.remove('active'); });
       tab.classList.add('active');
+      var target = document.getElementById('tab-' + tab.dataset.tab);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   });
 })();

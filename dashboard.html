@@ -75,11 +75,6 @@
 <main class="dash-main">
   <div class="container dash-content">
 
-    <div class="sample-banner">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
-      <span>You're viewing a <strong>sample login</strong>. This is a demo dashboard for a fictional institution (Greenfield School), loaded with sample data. No real account or sign in is required.</span>
-    </div>
-
     <div class="dash-toolbar">
       <div class="dash-search">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -91,38 +86,18 @@
       </button>
     </div>
 
-    <div class="dash-heading">
+    <div class="dash-heading" id="tab-dashboard">
       <div>
         <h1>Welcome back, Greenfield School</h1>
+        <span class="dash-sample-tag">(Sample)</span>
         <p>Here's how your sports equipment is doing today.</p>
-      </div>
-      <div class="dash-heading-actions">
-        <button class="btn btn-primary" disabled>+ Order More</button>
       </div>
     </div>
 
-    <!-- SUBSCRIPTION CARD -->
-    <div class="sub-panel">
-      <div class="sub-panel-main">
-        <span class="pill sub-plan-pill">Premium Plan · Active</span>
-        <h2>You're covered for 10 sports and 90 pieces of equipment</h2>
-        <p>Your plan renews on <strong>15 Jan 2027</strong>. Everything below is maintained and restocked for you — no extra paperwork.</p>
-        <div class="sub-panel-actions">
-          <button class="btn btn-primary" disabled>Order More Equipment</button>
-          <button class="btn btn-secondary" disabled>Order Consumables</button>
-          <a href="services.html" class="btn btn-ghost">Compare Plans</a>
-        </div>
-      </div>
-      <div class="sub-panel-stats">
-        <div class="sub-stat">
-          <span class="sub-stat-value">10</span>
-          <span class="sub-stat-label">Sports covered</span>
-        </div>
-        <div class="sub-stat">
-          <span class="sub-stat-value">90</span>
-          <span class="sub-stat-label">Equipment managed</span>
-        </div>
-      </div>
+    <!-- SUBSCRIPTION LINE -->
+    <div class="sub-panel" id="tab-orders">
+      <span class="sub-panel-info">Greenfield School <span class="sub-plan-tag">(Premium Plan)</span> · Renews <strong>15 Jan 2027</strong></span>
+      <a href="services.html" class="btn btn-primary">Order More</a>
     </div>
 
     <!-- KPI CARDS -->
@@ -151,7 +126,7 @@
 
     <!-- CHART + BREAKDOWN -->
     <div class="grid dash-row-2">
-      <div class="panel">
+      <div class="panel" id="tab-reports">
         <div class="panel-head">
           <div>
             <h3>How Well Your Equipment Is Working</h3>
@@ -169,7 +144,7 @@
         </div>
       </div>
 
-      <div class="panel">
+      <div class="panel" id="tab-equipment">
         <div class="panel-head">
           <div>
             <h3>Equipment by Sport</h3>
@@ -188,46 +163,49 @@
       </div>
     </div>
 
-    <!-- ISSUES TABLE -->
-    <div class="panel">
-      <div class="panel-head">
-        <div>
-          <h3>Needs Attention</h3>
-          <p>We've already notified the right repair partner</p>
+    <!-- MAINTENANCE GROUP -->
+    <div class="dash-section-group" id="tab-maintenance">
+      <!-- ISSUES TABLE -->
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3>Needs Attention</h3>
+            <p>We've already notified the right repair partner</p>
+          </div>
+          <a href="#" class="pill pill--outline">View all</a>
         </div>
-        <a href="#" class="pill pill--outline">View all</a>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Equipment</th><th>Location</th><th>What's Wrong</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>TT Table #04</td><td>Indoor Hall</td><td>Net torn</td><td><span class="status status-progress">Being Fixed</span></td></tr>
+              <tr><td>Treadmill #2</td><td>Gym, Block B</td><td>Belt slipping</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
+              <tr><td>Badminton Net</td><td>Court 3</td><td>Torn, needs replacing</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
+              <tr><td>Football Set ×5</td><td>Main Ground</td><td>Low pressure</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
+              <tr><td>Cricket Kit #1</td><td>Sports Store</td><td>Bat toe guard worn</td><td><span class="status status-resolved">Fixed</span></td></tr>
+              <tr><td>Multi-Gym Station</td><td>Gym, Block B</td><td>Regular service due</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Equipment</th><th>Location</th><th>What's Wrong</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>TT Table #04</td><td>Indoor Hall</td><td>Net torn</td><td><span class="status status-progress">Being Fixed</span></td></tr>
-            <tr><td>Treadmill #2</td><td>Gym, Block B</td><td>Belt slipping</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
-            <tr><td>Badminton Net</td><td>Court 3</td><td>Torn, needs replacing</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
-            <tr><td>Football Set ×5</td><td>Main Ground</td><td>Low pressure</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
-            <tr><td>Cricket Kit #1</td><td>Sports Store</td><td>Bat toe guard worn</td><td><span class="status status-resolved">Fixed</span></td></tr>
-            <tr><td>Multi-Gym Station</td><td>Gym, Block B</td><td>Regular service due</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
 
-    <!-- MAINTENANCE -->
-    <div class="panel">
-      <div class="panel-head">
-        <div>
-          <h3>Upcoming Maintenance</h3>
-          <p>What's being checked or restocked next</p>
+      <!-- MAINTENANCE -->
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3>Upcoming Maintenance</h3>
+            <p>What's being checked or restocked next</p>
+          </div>
         </div>
+        <ul class="timeline-list">
+          <li><span class="tl-date">Jul 28</span><div><strong>Court check-up</strong><p>Badminton &amp; TT courts, Indoor Hall</p></div></li>
+          <li><span class="tl-date">Aug 03</span><div><strong>Gym equipment service</strong><p>6 treadmills, 4 multi-gym stations</p></div></li>
+          <li><span class="tl-date">Aug 10</span><div><strong>Consumables restock</strong><p>Shuttles, footballs, TT rubbers</p></div></li>
+          <li><span class="tl-date">Aug 21</span><div><strong>Yearly equipment review</strong><p>What to replace, what's still good</p></div></li>
+        </ul>
       </div>
-      <ul class="timeline-list">
-        <li><span class="tl-date">Jul 28</span><div><strong>Court check-up</strong><p>Badminton &amp; TT courts, Indoor Hall</p></div></li>
-        <li><span class="tl-date">Aug 03</span><div><strong>Gym equipment service</strong><p>6 treadmills, 4 multi-gym stations</p></div></li>
-        <li><span class="tl-date">Aug 10</span><div><strong>Consumables restock</strong><p>Shuttles, footballs, TT rubbers</p></div></li>
-        <li><span class="tl-date">Aug 21</span><div><strong>Yearly equipment review</strong><p>What to replace, what's still good</p></div></li>
-      </ul>
     </div>
 
   </div>

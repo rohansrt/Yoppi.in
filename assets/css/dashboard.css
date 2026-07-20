@@ -60,7 +60,9 @@
   position: sticky;
   top: 84px;
   z-index: 40;
-  background: var(--white);
+  background:
+    radial-gradient(900px 240px at 15% -60%, var(--blue-100), transparent 60%),
+    var(--blue-50);
   border-bottom: 1px solid var(--border);
 }
 
@@ -125,26 +127,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-/* Sample-login notice */
-.sample-banner {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-  border: 1px solid var(--blue-300);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.sample-banner svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
 }
 
 /* Toolbar (search + notifications) */
@@ -222,130 +204,45 @@
   font-size: 1.6rem;
 }
 
+.dash-sample-tag {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .dash-heading p {
   margin-top: 6px;
   color: var(--text-muted);
   font-size: 0.94rem;
 }
 
-.dash-heading-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.dash-heading-actions .btn {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* ---------- Subscription panel ---------- */
+/* ---------- Subscription line ---------- */
 .sub-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 16px;
   flex-wrap: wrap;
   background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
   color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 16px 22px;
 }
 
-.sub-panel-main {
-  max-width: 560px;
-}
-
-.sub-plan-pill {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--blue-300);
-}
-
-.sub-panel-main h2 {
-  margin-top: 14px;
-  font-size: 1.4rem;
-  line-height: 1.3;
-}
-
-.sub-panel-main p {
-  margin-top: 12px;
+.sub-panel-info {
+  font-size: 0.94rem;
+  font-weight: 500;
   color: var(--text-on-dark-muted);
-  font-size: 0.92rem;
 }
 
-.sub-panel-main strong {
+.sub-panel-info strong {
   color: var(--white);
 }
 
-.sub-panel-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.sub-panel-actions .btn-ghost {
+.sub-plan-tag {
   color: var(--blue-300);
-}
-
-.sub-panel-actions .btn-ghost:hover {
-  color: var(--white);
-}
-
-.sub-panel-actions .btn-secondary {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.sub-panel-actions .btn-secondary:hover {
-  border-color: var(--blue-300);
-  color: var(--blue-300);
-}
-
-.sub-panel-stats {
-  display: flex;
-  gap: 28px;
-  flex-shrink: 0;
-}
-
-.sub-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 20px 26px;
-  min-width: 110px;
-}
-
-.sub-stat-value {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.sub-stat-label {
-  font-size: 0.78rem;
-  color: var(--text-on-dark-muted);
-  text-align: center;
-}
-
-@media (max-width: 900px) {
-  .sub-panel {
-    padding: 26px;
-  }
-  .sub-panel-stats {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .sub-stat {
-    flex: 1;
-    min-width: 0;
-    padding: 16px 12px;
-  }
 }
 
 /* ---------- KPI cards ---------- */
@@ -397,6 +294,13 @@
 .kpi-trend.neutral {
   color: var(--slate-600);
   background: var(--slate-100);
+}
+
+/* ---------- Section group (tab scroll target wrapping multiple panels) ---------- */
+.dash-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* ---------- Panels ---------- */

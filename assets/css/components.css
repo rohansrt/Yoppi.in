@@ -742,35 +742,8 @@ tbody td:first-child {
   height: 16px;
 }
 
-.modal-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.modal-icon svg {
-  width: 26px;
-  height: 26px;
-}
-
 .modal-card h3 {
   font-size: 1.3rem;
-}
-
-.modal-card p {
-  margin-top: 12px;
-  color: var(--text-muted);
-  font-size: 0.96rem;
-}
-
-.modal-card .pill {
-  margin-bottom: 4px;
 }
 
 .modal-actions {
@@ -784,8 +757,57 @@ tbody td:first-child {
   flex: 1;
 }
 
-.modal-note {
-  margin-top: 16px;
-  font-size: 0.82rem;
+.modal-card--compact {
+  max-width: 300px;
+  padding: 28px;
+  text-align: center;
+}
+
+.modal-card--compact h3 {
+  font-size: 1.1rem;
+}
+
+.modal-card--compact .modal-actions {
+  margin-top: 20px;
+}
+
+.modal-card #book-modal-plan {
+  margin-bottom: 4px;
+}
+
+.modal-card p {
+  margin-top: 10px;
   color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.sport-picker {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sport-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.sport-box input {
+  accent-color: var(--accent);
+}
+
+.sport-box:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
 }
