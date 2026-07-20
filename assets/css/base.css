@@ -1,0 +1,215 @@
+/* ===================================================================
+   YOPPI — Base styles: reset, tokens, typography
+   =================================================================== */
+
+:root {
+  /* Brand */
+  --blue-900: #0a2a6b;
+  --blue-800: #0d3a94;
+  --blue-700: #0f4bc0;
+  --blue-600: #1863e6;
+  --blue-500: #2e7cf6;
+  --blue-400: #5b9cff;
+  --blue-300: #8fbcff;
+  --blue-100: #e7f0ff;
+  --blue-50: #f2f7ff;
+
+  /* Neutrals */
+  --navy-950: #080b12;
+  --navy-900: #0c1120;
+  --navy-850: #10192e;
+  --navy-800: #141f38;
+  --navy-700: #1c2b4a;
+  --slate-600: #4a5568;
+  --slate-500: #667085;
+  --slate-400: #98a2b3;
+  --slate-300: #d0d5dd;
+  --slate-200: #e4e7ec;
+  --slate-100: #eef1f6;
+  --slate-50: #f7f9fc;
+  --white: #ffffff;
+
+  /* Semantic */
+  --bg: var(--white);
+  --bg-alt: var(--slate-50);
+  --bg-dark: var(--navy-950);
+  --bg-dark-alt: var(--navy-900);
+  --text: var(--navy-950);
+  --text-muted: var(--slate-500);
+  --text-on-dark: var(--white);
+  --text-on-dark-muted: var(--slate-400);
+  --border: var(--slate-200);
+  --border-dark: var(--navy-700);
+  --accent: var(--blue-600);
+  --accent-strong: var(--blue-700);
+  --accent-soft: var(--blue-100);
+
+  /* Layout */
+  --container: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 2px rgba(10, 20, 40, 0.06);
+  --shadow-md: 0 8px 24px rgba(10, 20, 40, 0.08);
+  --shadow-lg: 0 24px 64px rgba(10, 20, 40, 0.12);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section--tight {
+  padding: 64px 0;
+}
+
+.section--dark {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section--dark .eyebrow {
+  color: var(--blue-300);
+}
+
+.section-head {
+  max-width: 680px;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-top: 12px;
+}
+
+.section-head p {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.section--dark .section-head p {
+  color: var(--text-on-dark-muted);
+}
+
+.section-head.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.section--dark .text-accent {
+  color: var(--blue-400);
+}
+
+::selection {
+  background: var(--blue-200, #bcd6ff);
+  color: var(--navy-950);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+  .section--tight {
+    padding: 48px 0;
+  }
+}

@@ -1,0 +1,94 @@
+/* ===================================================================
+   YOPPI — Signup page-specific styles
+   =================================================================== */
+
+.signup-section {
+  padding-top: 64px;
+  background: radial-gradient(900px 420px at 90% -10%, var(--blue-100), transparent 60%);
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.signup-intro h1 {
+  font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+  margin-top: 16px;
+}
+
+.signup-intro > p {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  max-width: 460px;
+}
+
+.intro-points {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.intro-points li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pt-num {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--navy-950);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.intro-points strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.intro-points p {
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.signup-intro .banner {
+  margin-top: 36px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}

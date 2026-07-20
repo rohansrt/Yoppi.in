@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YOPPI Sign Up</title>
+<meta name="description" content="Register your institution with YOPPI to get started with Sports Infrastructure as a Service." />
+<link rel="icon" href="assets/images/yoppi-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/signup.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/yoppi-icon.png" alt="YOPPI" />
+      <span class="brand-text">
+        <span class="brand-name">YOPPI</span>
+        <span class="brand-tagline">Every Asset | Every Game | Anytime</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services/Plans</a>
+      <a href="contact.html">Contact Us</a>
+      <button type="button" class="nav-links-login" data-login-trigger>Login</button>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="btn btn-secondary" data-login-trigger>Login</button>
+      <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section signup-section">
+    <div class="container signup-grid">
+
+      <div class="signup-intro reveal is-visible">
+        <span class="pill">Institution Sign Up</span>
+        <h1>Register your institution with YOPPI.</h1>
+        <p>Tell us about your school, college, university or corporate campus. Our onboarding team will follow up to schedule your first asset audit.</p>
+
+        <ul class="intro-points">
+          <li>
+            <span class="pt-num">1</span>
+            <div><strong>We review your details</strong><p>Usually within one business day.</p></div>
+          </li>
+          <li>
+            <span class="pt-num">2</span>
+            <div><strong>We schedule an onsite audit</strong><p>Inventory every existing asset, free of cost.</p></div>
+          </li>
+          <li>
+            <span class="pt-num">3</span>
+            <div><strong>You choose a model</strong><p>Care, Lease, or Asset Management: your call.</p></div>
+          </li>
+        </ul>
+
+        <div class="banner banner--soft">
+          Already onboarded? <button type="button" class="link-inline" data-login-trigger>Log in to your dashboard →</button>
+        </div>
+      </div>
+
+      <div class="form-card reveal is-visible">
+        <h2 style="font-size:1.3rem;margin-bottom:24px;">Organisation Details</h2>
+        <form id="signup-form" novalidate>
+
+          <div class="field">
+            <label for="org-name">Organisation Name</label>
+            <input type="text" id="org-name" name="org-name" placeholder="e.g. Greenfield International School" required />
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="org-type">Organisation Type</label>
+              <select id="org-type" name="org-type">
+                <option>School</option>
+                <option>College / University</option>
+                <option>Corporate Campus</option>
+                <option>Gated Society / Club</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="e.g. Bengaluru" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="contact-person">Contact Person</label>
+              <input type="text" id="contact-person" name="contact-person" placeholder="Full name" required />
+            </div>
+            <div class="field">
+              <label for="designation">Designation <span class="optional">(optional)</span></label>
+              <input type="text" id="designation" name="designation" placeholder="e.g. Sports Head" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" name="email" placeholder="you@institution.edu" required />
+            </div>
+            <div class="field">
+              <label for="signup-phone">Phone Number</label>
+              <input type="tel" id="signup-phone" name="phone" placeholder="+91 00000 00000" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="headcount">Students / Employees <span class="optional">(optional)</span></label>
+              <select id="headcount" name="headcount">
+                <option value="">Select a range</option>
+                <option>Under 500</option>
+                <option>500 to 2,000</option>
+                <option>2,000 to 5,000</option>
+                <option>5,000+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="interest">Interested Model <span class="optional">(optional)</span></label>
+              <select id="interest" name="interest">
+                <option value="">Not sure yet</option>
+                <option>Care</option>
+                <option>Lease</option>
+                <option>Asset Management</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" required />
+            <span>I agree to be contacted by the YOPPI team regarding this enquiry.</span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:22px;">Create Account</button>
+          <p class="form-note" id="signup-status" role="status">This is a UI prototype. No account is created and no data is stored.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/images/yoppi-icon.png" alt="YOPPI" />
+          <span class="brand-name">YOPPI</span>
+        </a>
+        <p>Every Asset | Every Game | Anytime. The operating system for institutional sports.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services/Plans</a>
+        <a href="dashboard.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="services.html">Essential · Plus · Elite</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <li>founder@yoppi.in</li>
+        <li>+91 89794 84758</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> YOPPI. All rights reserved.</span>
+      <span>Confidential · Sports Infrastructure as a Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/signup.js"></script>
+</body>
+</html>

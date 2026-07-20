@@ -1,0 +1,238 @@
+/* ===================================================================
+   YOPPI — Homepage-specific styles
+   =================================================================== */
+
+.hero {
+  position: relative;
+  padding: 88px 0 80px;
+  background:
+    radial-gradient(1100px 480px at 85% -10%, var(--blue-100), transparent 60%),
+    var(--blue-50);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  margin-top: 18px;
+}
+
+.hero-sub {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 540px;
+}
+
+.hero-mission {
+  margin-top: 14px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  max-width: 540px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.hero-cta .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero-flow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 48px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  flex-wrap: wrap;
+}
+
+.hero-flow svg {
+  width: 16px;
+  height: 16px;
+  color: var(--slate-300);
+}
+
+.hero-flow .flow-accent {
+  color: var(--accent);
+}
+
+/* Hero panel — live dashboard screenshot */
+.hero-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.panel-shot {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.panel-shot img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+.panel-shot-badge {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: var(--navy-950);
+  color: var(--white);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+
+.panel-shot-dot {
+  color: #4ade80;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .panel-shot {
+    max-width: 520px;
+  }
+}
+
+/* Workflow grid (how it works) */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.wf-step {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.wf-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.wf-step span {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--accent-soft);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .workflow-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stats strip */
+.stats-strip .grid {
+  gap: 0;
+}
+
+.stats-strip .stat {
+  padding: 8px 28px;
+  border-left: 1px solid var(--border);
+}
+
+.stats-strip .stat:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+@media (max-width: 640px) {
+  .stats-strip .stat {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 20px 0 0;
+  }
+  .stats-strip .stat:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+/* CTA section */
+.cta-section {
+  background: linear-gradient(135deg, var(--navy-950), var(--blue-900));
+  color: var(--white);
+}
+
+.cta-inner {
+  text-align: center;
+  max-width: 700px;
+}
+
+.cta-inner h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+}
+
+.cta-inner p {
+  margin-top: 14px;
+  color: var(--text-on-dark-muted);
+  font-size: 1.05rem;
+}
+
+.cta-section .btn-secondary {
+  color: var(--text-on-dark);
+  border-color: var(--border-dark);
+}
+
+.cta-section .btn-secondary:hover {
+  border-color: var(--blue-400);
+  color: var(--blue-300);
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

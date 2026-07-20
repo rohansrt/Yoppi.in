@@ -1,0 +1,103 @@
+/* ===================================================================
+   YOPPI — Contact page-specific styles
+   =================================================================== */
+
+.contact-section {
+  padding-top: 72px;
+  background: radial-gradient(900px 400px at 15% -10%, var(--blue-100), transparent 60%);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.contact-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin-top: 18px;
+  max-width: 520px;
+}
+
+.contact-copy > p {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 500px;
+}
+
+.contact-copy .banner {
+  margin-top: 32px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* ---------- Contact channel rows (larger boxed icons) ---------- */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 36px;
+  max-width: 500px;
+}
+
+.channel-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+a.channel-row:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--slate-300);
+}
+
+.channel-icon {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.channel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.channel-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.channel-text strong {
+  font-size: 1.02rem;
+  color: var(--navy-950);
+}

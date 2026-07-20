@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact YOPPI</title>
+<meta name="description" content="Talk to YOPPI about bringing Sports Infrastructure as a Service to your school, college or corporate campus." />
+<link rel="icon" href="assets/images/yoppi-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/yoppi-icon.png" alt="YOPPI" />
+      <span class="brand-text">
+        <span class="brand-name">YOPPI</span>
+        <span class="brand-tagline">Every Asset | Every Game | Anytime</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services/Plans</a>
+      <a href="contact.html" class="active">Contact Us</a>
+      <button type="button" class="nav-links-login" data-login-trigger>Login</button>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="btn btn-secondary" data-login-trigger>Login</button>
+      <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section contact-section">
+    <div class="container contact-grid">
+
+      <div class="contact-copy reveal is-visible">
+        <span class="pill">Get In Touch</span>
+        <h1>Let's talk about your institution's sports infrastructure.</h1>
+        <p>Whether it's a pilot audit for one campus or a rollout across many cities, our team will respond within one business day.</p>
+
+        <div class="contact-channels">
+          <a class="channel-row" href="mailto:founder@yoppi.in">
+            <span class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3 6 9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="channel-text">
+              <span class="channel-label">Email</span>
+              <strong>founder@yoppi.in</strong>
+            </span>
+          </a>
+          <a class="channel-row" href="tel:+918979484758">
+            <span class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 0 1 2-2h2.3a1 1 0 0 1 1 .8l1 4a1 1 0 0 1-.5 1.1L7 10.3a12 12 0 0 0 6.7 6.7l1.4-1.8a1 1 0 0 1 1.1-.5l4 1a1 1 0 0 1 .8 1V19a2 2 0 0 1-2 2h-1C10.2 21 3 13.8 3 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="channel-text">
+              <span class="channel-label">Phone</span>
+              <strong>+91 89794 84758</strong>
+            </span>
+          </a>
+          <div class="channel-row">
+            <span class="channel-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-12A7 7 0 0 0 5 10c0 5.9 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <span class="channel-text">
+              <span class="channel-label">Office</span>
+              <strong>Address to be updated, India</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="banner banner--soft">
+          We respond to institutional enquiries within one business day, and enquiries from vendor partners within three.
+        </div>
+      </div>
+
+      <div class="form-card reveal is-visible">
+        <h2 style="font-size:1.4rem;margin-bottom:6px;">Send a Message</h2>
+        <p style="color:var(--text-muted);font-size:0.94rem;margin-bottom:28px;">Fill this in and our team will reach out to schedule a walkthrough.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jordan Rao" required />
+            </div>
+            <div class="field">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="org" placeholder="e.g. Greenfield School" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="you@institution.edu" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="role">I am a</label>
+            <select id="role" name="role">
+              <option>Sports Head / PE Teacher</option>
+              <option>Facilities / Admin Manager</option>
+              <option>Principal / Director</option>
+              <option>HR / Corporate Wellness</option>
+              <option>Vendor Partner</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">What's this about? <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your institution, current equipment challenges, or which service (Care, Lease, Asset Management) you're interested in."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+          <p class="form-note" id="form-status" role="status">This is a UI prototype. Form submission is not yet connected.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/images/yoppi-icon.png" alt="YOPPI" />
+          <span class="brand-name">YOPPI</span>
+        </a>
+        <p>Every Asset | Every Game | Anytime. The operating system for institutional sports.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services/Plans</a>
+        <a href="dashboard.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="services.html">Essential · Plus · Elite</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <li>founder@yoppi.in</li>
+        <li>+91 89794 84758</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> YOPPI. All rights reserved.</span>
+      <span>Confidential · Sports Infrastructure as a Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

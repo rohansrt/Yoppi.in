@@ -1,0 +1,322 @@
+/* ===================================================================
+   YOPPI — Services page-specific styles
+   =================================================================== */
+
+.page-hero {
+  padding: 40px 0 28px;
+  background:
+    radial-gradient(900px 400px at 15% -20%, var(--blue-100), transparent 60%),
+    var(--blue-50);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-top: 12px;
+  max-width: 720px;
+}
+
+.page-hero p {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 900px;
+}
+
+.benefit-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.benefit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #16a34a;
+}
+
+.benefit-list li::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
+  transform: rotate(-45deg);
+}
+
+/* ---------- Plan cards ---------- */
+.plan-section {
+  padding-top: 28px;
+  padding-bottom: 56px;
+}
+
+.plan-grid {
+  align-items: stretch;
+}
+
+.plan-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.plan-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.plan-card-head .card-icon {
+  margin-bottom: 0;
+}
+
+.plan-card h3 {
+  font-size: 1.35rem;
+  margin-top: 10px;
+}
+
+.plan-card > p {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.plan-label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.plan-services {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan-services li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.89rem;
+  color: var(--text);
+}
+
+.plan-service-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-service-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.plan-sla {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--slate-100);
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.plan-sla-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+
+.plan-sla-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.plan-sla strong {
+  color: var(--accent-strong);
+}
+
+/* Featured (middle) plan — dark, matches deck's alternating layout */
+.plan-card--featured {
+  background: var(--navy-950);
+  color: var(--white);
+  border-color: var(--navy-950);
+}
+
+.plan-card--featured .card-icon {
+  background: rgba(91, 156, 255, 0.14);
+  color: var(--blue-300);
+}
+
+.plan-card--featured > p {
+  color: var(--text-on-dark-muted);
+}
+
+.plan-card--featured .plan-label {
+  color: var(--text-on-dark-muted);
+}
+
+.plan-card--featured .plan-services li {
+  color: var(--white);
+}
+
+.plan-card--featured .plan-service-icon {
+  background: rgba(91, 156, 255, 0.16);
+  color: var(--blue-300);
+}
+
+.plan-card--featured .plan-sla {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+}
+
+.plan-card--featured .plan-sla strong {
+  color: var(--blue-300);
+}
+
+.plan-footnote {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------- SLA strip ---------- */
+.sla-strip {
+  margin-top: 28px;
+  background: var(--slate-100);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.sla-strip-title {
+  font-size: 1.15rem;
+}
+
+.sla-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sla-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 150px;
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.sla-metric strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.sla-metric span {
+  font-size: 0.82rem;
+  color: var(--blue-100);
+}
+
+@media (max-width: 700px) {
+  .sla-strip {
+    padding: 24px;
+    gap: 20px;
+  }
+  .sla-metrics {
+    gap: 14px;
+  }
+  .sla-metric {
+    min-width: 130px;
+    padding: 16px 20px;
+  }
+  .sla-metric strong {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---------- Combined plan benefits ---------- */
+.yoppi-benefits {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.yoppi-benefits h3 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+.benefit-list--grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .benefit-list--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .benefit-list--grid {
+    grid-template-columns: 1fr;
+  }
+}
