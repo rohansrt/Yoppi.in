@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>YOPPI Dashboard (Sample)</title>
-<meta name="description" content="YOPPI institutional dashboard: sample login preview of assets, equipment, issues, maintenance and reports." />
+<title>YOPPI Dashboard</title>
+<meta name="description" content="YOPPI institutional dashboard: track tagged assets, equipment health, open issues and upcoming maintenance." />
 <link rel="icon" href="assets/images/yoppi-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,13 +31,14 @@
     </nav>
     <div class="nav-actions">
       <div class="org-chip">
-        <div class="org-avatar">GS</div>
+        <div class="org-avatar" id="org-avatar">--</div>
         <div>
-          <strong>Greenfield School</strong>
-          <span>Sports Head · Sample</span>
+          <strong id="org-chip-name">Loading…</strong>
+          <span id="org-chip-role">—</span>
         </div>
       </div>
       <a href="index.html" class="btn btn-secondary">Exit<span> to Website</span></a>
+      <button type="button" class="btn btn-secondary" id="logout-btn">Log Out</button>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -59,15 +60,11 @@
     <a href="#" class="dash-tab" data-tab="maintenance">
       <svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.4 5.4L6 21H3v-3l9.6-9.6a4 4 0 0 1 5.4-5.4l-3.1 3.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
       Maintenance
-      <span class="dash-badge">6</span>
+      <span class="dash-badge" id="maintenance-badge" style="display:none;">0</span>
     </a>
     <a href="#" class="dash-tab" data-tab="orders">
       <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="20" r="1.4" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="20" r="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 3.5h2.4l2.4 12.4h10.6l2.1-8.4H6.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Order More
-    </a>
-    <a href="#" class="dash-tab" data-tab="reports">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18M7 15l4-6 3 4 4-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Reports
     </a>
   </div>
 </div>
@@ -80,23 +77,22 @@
         <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         <input type="text" placeholder="Search assets, vendors, complaints…" disabled />
       </div>
-      <button class="icon-btn" aria-label="Notifications">
+      <button class="icon-btn" aria-label="Notifications" id="notif-bell">
         <svg viewBox="0 0 24 24" fill="none"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <span class="dot"></span>
+        <span class="dot" id="notif-dot" style="display:none;"></span>
       </button>
     </div>
 
     <div class="dash-heading" id="tab-dashboard">
       <div>
-        <h1>Welcome back, Greenfield School</h1>
-        <span class="dash-sample-tag">(Sample)</span>
+        <h1 id="dash-welcome">Welcome back</h1>
         <p>Here's how your sports equipment is doing today.</p>
       </div>
     </div>
 
     <!-- SUBSCRIPTION LINE -->
     <div class="sub-panel" id="tab-orders">
-      <span class="sub-panel-info">Greenfield School <span class="sub-plan-tag">(Premium Plan)</span> · Renews <strong>15 Jan 2027</strong></span>
+      <span class="sub-panel-info" id="sub-panel-info">Loading…</span>
       <a href="services.html" class="btn btn-primary">Order More</a>
     </div>
 
@@ -104,64 +100,40 @@
     <div class="grid grid-4 kpi-row">
       <div class="kpi-card">
         <span class="kpi-label">Sports Covered</span>
-        <span class="kpi-value">10</span>
+        <span class="kpi-value" id="kpi-sports-value">—</span>
         <span class="kpi-trend neutral">See full sports list</span>
       </div>
       <div class="kpi-card">
         <span class="kpi-label">Equipment Managed</span>
-        <span class="kpi-value">90</span>
-        <span class="kpi-trend up">+6 added this month</span>
+        <span class="kpi-value" id="kpi-equipment-value">—</span>
+        <span class="kpi-trend neutral">Across all categories</span>
       </div>
       <div class="kpi-card">
         <span class="kpi-label">Last Maintained</span>
-        <span class="kpi-value">3 days ago</span>
-        <span class="kpi-trend neutral">Gym stations serviced</span>
+        <span class="kpi-value" id="kpi-maintained-value">—</span>
+        <span class="kpi-trend neutral" id="kpi-maintained-trend"></span>
       </div>
       <div class="kpi-card">
         <span class="kpi-label">Needs Attention</span>
-        <span class="kpi-value">6</span>
-        <span class="kpi-trend warn">2 waiting on a vendor</span>
+        <span class="kpi-value" id="kpi-attention-value">—</span>
+        <span class="kpi-trend warn" id="kpi-attention-trend"></span>
       </div>
     </div>
 
-    <!-- CHART + BREAKDOWN -->
-    <div class="grid dash-row-2">
-      <div class="panel" id="tab-reports">
-        <div class="panel-head">
-          <div>
-            <h3>How Well Your Equipment Is Working</h3>
-            <p>Last 6 months, month by month</p>
-          </div>
-          <span class="pill pill--outline">Sample Data</span>
-        </div>
-        <div class="bar-chart" id="uptime-chart">
-          <div class="bar-col"><div class="bar" style="--h:78%"></div><span>Feb</span></div>
-          <div class="bar-col"><div class="bar" style="--h:82%"></div><span>Mar</span></div>
-          <div class="bar-col"><div class="bar" style="--h:88%"></div><span>Apr</span></div>
-          <div class="bar-col"><div class="bar" style="--h:91%"></div><span>May</span></div>
-          <div class="bar-col"><div class="bar" style="--h:94%"></div><span>Jun</span></div>
-          <div class="bar-col"><div class="bar bar-current" style="--h:96%"></div><span>Jul</span></div>
+    <!-- EQUIPMENT BREAKDOWN -->
+    <div class="panel" id="tab-equipment">
+      <div class="panel-head">
+        <div>
+          <h3>Equipment by Category</h3>
+          <p id="donut-caption">Loading…</p>
         </div>
       </div>
-
-      <div class="panel" id="tab-equipment">
-        <div class="panel-head">
-          <div>
-            <h3>Equipment by Sport</h3>
-            <p>90 items, all tracked</p>
-          </div>
-        </div>
-        <div class="donut-wrap">
-          <div class="donut"></div>
-          <ul class="donut-legend">
-            <li><span class="dot dot-1"></span>Racquet sports <em>34%</em></li>
-            <li><span class="dot dot-2"></span>Gym &amp; fitness <em>26%</em></li>
-            <li><span class="dot dot-3"></span>Team sports <em>22%</em></li>
-            <li><span class="dot dot-4"></span>Consumables <em>18%</em></li>
-          </ul>
-        </div>
+      <div class="donut-wrap" id="donut-wrap">
+        <div class="donut" id="donut-chart"></div>
+        <ul class="donut-legend" id="donut-legend"></ul>
       </div>
     </div>
+
 
     <!-- MAINTENANCE GROUP -->
     <div class="dash-section-group" id="tab-maintenance">
@@ -179,13 +151,8 @@
             <thead>
               <tr><th>Equipment</th><th>Location</th><th>What's Wrong</th><th>Status</th></tr>
             </thead>
-            <tbody>
-              <tr><td>TT Table #04</td><td>Indoor Hall</td><td>Net torn</td><td><span class="status status-progress">Being Fixed</span></td></tr>
-              <tr><td>Treadmill #2</td><td>Gym, Block B</td><td>Belt slipping</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
-              <tr><td>Badminton Net</td><td>Court 3</td><td>Torn, needs replacing</td><td><span class="status status-pending">Waiting on Vendor</span></td></tr>
-              <tr><td>Football Set ×5</td><td>Main Ground</td><td>Low pressure</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
-              <tr><td>Cricket Kit #1</td><td>Sports Store</td><td>Bat toe guard worn</td><td><span class="status status-resolved">Fixed</span></td></tr>
-              <tr><td>Multi-Gym Station</td><td>Gym, Block B</td><td>Regular service due</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
+            <tbody id="tickets-tbody">
+              <tr><td colspan="4">Loading…</td></tr>
             </tbody>
           </table>
         </div>
@@ -199,11 +166,8 @@
             <p>What's being checked or restocked next</p>
           </div>
         </div>
-        <ul class="timeline-list">
-          <li><span class="tl-date">Jul 28</span><div><strong>Court check-up</strong><p>Badminton &amp; TT courts, Indoor Hall</p></div></li>
-          <li><span class="tl-date">Aug 03</span><div><strong>Gym equipment service</strong><p>6 treadmills, 4 multi-gym stations</p></div></li>
-          <li><span class="tl-date">Aug 10</span><div><strong>Consumables restock</strong><p>Shuttles, footballs, TT rubbers</p></div></li>
-          <li><span class="tl-date">Aug 21</span><div><strong>Yearly equipment review</strong><p>What to replace, what's still good</p></div></li>
+        <ul class="timeline-list" id="schedule-list">
+          <li>Loading…</li>
         </ul>
       </div>
     </div>
@@ -245,7 +209,10 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/yoppi-config.js" defer></script>
+<script type="module" src="assets/js/yoppi-client.js"></script>
+<script src="assets/js/auth-guard.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dashboard.js" defer></script>
 </body>
 </html>

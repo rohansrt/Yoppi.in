@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/home.css" />
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -51,7 +52,7 @@
         <p class="hero-sub">We audit, maintain and supply sports equipment for schools, colleges and corporates. You play, we handle the rest.</p>
         <p class="hero-mission">We're passionate about solving sports infrastructure in India, one court, one kit, one institution at a time.</p>
         <div class="hero-cta">
-          <a href="dashboard.html" class="btn btn-primary btn-lg">Login</a>
+          <a href="dashboard.html" class="btn btn-primary btn-lg" data-login-trigger>Login</a>
           <a href="signup.html" class="btn btn-secondary btn-lg">Sign Up Your Institution</a>
           <a href="services.html" class="btn btn-ghost btn-lg">What We Offer</a>
         </div>
@@ -66,7 +67,7 @@
 
       <div class="hero-panel reveal is-visible">
         <div class="panel-shot">
-          <a href="dashboard.html" class="panel-shot-link" aria-label="Open the sample dashboard">
+          <a href="dashboard.html" class="panel-shot-link" aria-label="Open your dashboard" data-login-trigger>
             <span class="panel-shot-badge"><span class="panel-shot-dot">●</span> Live sample dashboard</span>
             <img src="assets/images/dashboard-preview.png" alt="YOPPI sample dashboard showing tagged assets, equipment uptime and open issues for Greenfield School" />
           </a>
@@ -160,7 +161,7 @@
         <h4>Platform</h4>
         <a href="index.html">Home</a>
         <a href="services.html">Services/Plans</a>
-        <a href="dashboard.html">Login</a>
+        <a href="dashboard.html" data-login-trigger>Login</a>
         <a href="signup.html">Sign Up</a>
       </div>
       <div class="footer-col">

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/signup.css" />
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -119,6 +120,17 @@
 
           <div class="form-row">
             <div class="field">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" placeholder="At least 8 characters" minlength="8" required autocomplete="new-password" />
+            </div>
+            <div class="field">
+              <label for="signup-password-confirm">Confirm Password</label>
+              <input type="password" id="signup-password-confirm" name="password-confirm" placeholder="Re-enter your password" minlength="8" required autocomplete="new-password" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
               <label for="headcount">Students / Employees <span class="optional">(optional)</span></label>
               <select id="headcount" name="headcount">
                 <option value="">Select a range</option>
@@ -144,8 +156,12 @@
             <span>I agree to be contacted by the YOPPI team regarding this enquiry.</span>
           </label>
 
+          <div class="field">
+            <div id="signup-hcaptcha"></div>
+          </div>
+
           <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:22px;">Create Account</button>
-          <p class="form-note" id="signup-status" role="status">This is a UI prototype. No account is created and no data is stored.</p>
+          <p class="form-note" id="signup-status" role="status"></p>
         </form>
       </div>
 
@@ -167,7 +183,7 @@
         <h4>Platform</h4>
         <a href="index.html">Home</a>
         <a href="services.html">Services/Plans</a>
-        <a href="dashboard.html">Login</a>
+        <a href="dashboard.html" data-login-trigger>Login</a>
         <a href="signup.html">Sign Up</a>
       </div>
       <div class="footer-col">
@@ -188,7 +204,9 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/signup.js"></script>
+<script src="assets/js/yoppi-config.js" defer></script>
+<script type="module" src="assets/js/yoppi-client.js"></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/signup.js" defer></script>
 </body>
 </html>

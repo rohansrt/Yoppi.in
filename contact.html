@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/contact.css" />
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -128,8 +129,12 @@
             <textarea id="message" name="message" placeholder="Tell us about your institution, current equipment challenges, or which service (Care, Lease, Asset Management) you're interested in."></textarea>
           </div>
 
+          <div class="field">
+            <div id="contact-hcaptcha"></div>
+          </div>
+
           <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
-          <p class="form-note" id="form-status" role="status">This is a UI prototype. Form submission is not yet connected.</p>
+          <p class="form-note" id="form-status" role="status"></p>
         </form>
       </div>
 
@@ -151,7 +156,7 @@
         <h4>Platform</h4>
         <a href="index.html">Home</a>
         <a href="services.html">Services/Plans</a>
-        <a href="dashboard.html">Login</a>
+        <a href="dashboard.html" data-login-trigger>Login</a>
         <a href="signup.html">Sign Up</a>
       </div>
       <div class="footer-col">
@@ -172,7 +177,9 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/contact.js"></script>
+<script src="assets/js/yoppi-config.js" defer></script>
+<script type="module" src="assets/js/yoppi-client.js"></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
 </body>
 </html>
