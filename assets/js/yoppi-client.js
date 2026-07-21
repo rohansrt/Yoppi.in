@@ -197,9 +197,12 @@ export function onAuthStateChange(callback) {
   return client.auth.onAuthStateChange(callback);
 }
 
-export async function requestPasswordReset(email, redirectTo) {
+export async function requestPasswordReset(email, redirectTo, hcaptchaToken) {
   const client = requireClient();
-  const { error } = await client.auth.resetPasswordForEmail(email, { redirectTo });
+  const { error } = await client.auth.resetPasswordForEmail(email, {
+    redirectTo,
+    captchaToken: hcaptchaToken,
+  });
   if (error) throw error;
 }
 

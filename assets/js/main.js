@@ -127,12 +127,22 @@
         setLoginStatus('Enter your email above first, then click "Forgot password?" again.', true);
         return;
       }
+
+      var token = loginCaptcha && loginCaptcha.getResponse();
+      if (!token) {
+        setLoginStatus('Please complete the captcha before continuing.', true);
+        return;
+      }
+
       var redirectTo = new URL('reset-password.html', window.location.href).href;
-      window.Yoppi.requestPasswordReset(email, redirectTo).then(function () {
+      setLoginStatus('Sending reset link…', false);
+      window.Yoppi.requestPasswordReset(email, redirectTo, token).then(function () {
         setLoginStatus('If an account exists for that email, a reset link is on its way.', false);
       }).catch(function (err) {
         console.error('requestPasswordReset failed', err);
         setLoginStatus(err.message || 'Something went wrong — please try again.', true);
+      }).finally(function () {
+        if (loginCaptcha) loginCaptcha.reset();
       });
     });
 
