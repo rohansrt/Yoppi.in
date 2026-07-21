@@ -263,5 +263,12 @@
     renderNotifications(data.notifications);
   }).catch(function (err) {
     console.error('Failed to load dashboard data', err);
+    var welcome = document.getElementById('dash-welcome');
+    if (welcome) welcome.textContent = 'We could not load your dashboard';
+    var sub = document.querySelector('.dash-heading p');
+    if (sub) {
+      sub.textContent = (err && err.message) ||
+        'Something went wrong. Try refreshing, or log out and back in. If this keeps happening, contact founder@yoppi.in.';
+    }
   });
 })();

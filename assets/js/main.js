@@ -158,7 +158,19 @@
     loginTriggers.forEach(function (trigger) {
       trigger.addEventListener('click', function (e) {
         e.preventDefault();
-        openModal();
+        if (!window.Yoppi) {
+          openModal();
+          return;
+        }
+        window.Yoppi.getSession().then(function (session) {
+          if (session) {
+            window.location.href = 'dashboard.html';
+          } else {
+            openModal();
+          }
+        }).catch(function () {
+          openModal();
+        });
       });
     });
 

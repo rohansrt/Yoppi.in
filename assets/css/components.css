@@ -808,7 +808,7 @@ tbody td:first-child {
 }
 
 .modal-card--compact {
-  max-width: 300px;
+  max-width: 380px;
   padding: 28px;
   text-align: center;
 }
