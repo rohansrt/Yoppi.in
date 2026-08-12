@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MS Hall of Residence, IIT Kharagpur — Sample Dashboard | MatchGrade</title>
+<meta name="description" content="A sample MatchGrade dashboard illustrating equipment coverage for MS Hall of Residence, IIT Kharagpur. For illustration only — no login required." />
+<link rel="icon" href="assets/images/yoppi-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="dash-body">
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/yoppi-icon.png" alt="MatchGrade" />
+      <span class="brand-text">
+        <span class="brand-name">MatchGrade</span>
+        <span class="brand-tagline">Every Asset | Every Game | Anytime</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services/Plans</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="org-chip">
+        <div class="org-avatar" id="org-avatar">MSH</div>
+        <div>
+          <strong id="org-chip-name">MS Hall of Residence, IIT Kharagpur</strong>
+          <span id="org-chip-role">Hall Council · Sample view</span>
+        </div>
+      </div>
+      <a href="index.html" class="btn btn-secondary">Back to Website</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SUB NAV ================= -->
+<div class="dash-subnav">
+  <div class="container dash-subnav-inner">
+    <a href="#" class="dash-tab active" data-tab="dashboard">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="12" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="16" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+      Dashboard
+    </a>
+    <a href="#" class="dash-tab" data-tab="equipment">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      Equipment
+    </a>
+    <a href="#" class="dash-tab" data-tab="maintenance">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.4 5.4L6 21H3v-3l9.6-9.6a4 4 0 0 1 5.4-5.4l-3.1 3.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Maintenance
+    </a>
+    <a href="#" class="dash-tab" data-tab="orders">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="20" r="1.4" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="20" r="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 3.5h2.4l2.4 12.4h10.6l2.1-8.4H6.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Order More
+    </a>
+  </div>
+</div>
+
+<main class="dash-main">
+  <div class="container dash-content">
+
+    <div class="banner banner--soft" style="margin-bottom:20px;">
+      This is a sample dashboard prepared from our FY 2026–27 quotation for MS Hall of Residence, IIT Kharagpur — for illustration only. No login required.
+    </div>
+
+    <div class="dash-toolbar">
+      <div class="dash-search">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search assets, vendors, complaints…" disabled />
+      </div>
+      <button class="icon-btn" aria-label="Notifications" id="notif-bell">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="dash-heading" id="tab-dashboard">
+      <div>
+        <h1>Welcome, MS Hall of Residence</h1>
+        <p>Here's what MatchGrade coverage looks like for your General Championship, Maithri &amp; MSPL equipment.</p>
+      </div>
+    </div>
+
+    <!-- SUBSCRIPTION LINE -->
+    <div class="sub-panel" id="tab-orders">
+      <span class="sub-panel-info"><strong>17 sports</strong> covered · <strong>129</strong> equipment items leased &amp; serviced · 48 hr repair SLA</span>
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid grid-4 kpi-row">
+      <div class="kpi-card">
+        <span class="kpi-label">Sports Covered</span>
+        <span class="kpi-value">17</span>
+        <span class="kpi-trend neutral">Across the General Championship</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Equipment Managed</span>
+        <span class="kpi-value">129</span>
+        <span class="kpi-trend neutral">Across 5 sport groups</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Last Maintained</span>
+        <span class="kpi-value">Not started yet</span>
+        <span class="kpi-trend neutral">Audit begins after PO confirmation</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Needs Attention</span>
+        <span class="kpi-value">0</span>
+        <span class="kpi-trend neutral">All caught up</span>
+      </div>
+    </div>
+
+    <!-- EQUIPMENT BREAKDOWN -->
+    <div class="panel" id="tab-equipment">
+      <div class="panel-head">
+        <div>
+          <h3>Equipment by Sport Group</h3>
+          <p>129 items across 5 sport groups, all serviced within 48 hrs</p>
+        </div>
+      </div>
+      <div class="donut-wrap">
+        <div class="donut" style="background: conic-gradient(var(--accent) 0% 17%, var(--blue-300) 17% 32%, var(--navy-700) 32% 62%, var(--slate-200) 62% 86%, var(--blue-500) 86% 100%);"></div>
+        <ul class="donut-legend">
+          <li><span class="dot dot-1"></span>Racquet &amp; Court Sports <em>17%</em></li>
+          <li><span class="dot dot-2"></span>Cricket &amp; MSPL <em>15%</em></li>
+          <li><span class="dot dot-3"></span>Football, Basketball &amp; Volleyball <em>30%</em></li>
+          <li><span class="dot dot-4"></span>Hockey, Athletics &amp; Aquatics <em>24%</em></li>
+          <li><span class="dot" style="background: var(--blue-500);"></span>Chess &amp; Yoga <em>14%</em></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- MAINTENANCE GROUP -->
+    <div class="dash-section-group" id="tab-maintenance">
+      <!-- ISSUES TABLE -->
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3>Needs Attention</h3>
+            <p>We'll flag issues here in real time once your equipment is live</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Equipment</th><th>Location</th><th>What's Wrong</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4">No open issues yet — service starts once onboarding is complete.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MAINTENANCE -->
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3>Onboarding &amp; Ongoing Care</h3>
+            <p>What happens after your purchase order is confirmed</p>
+          </div>
+        </div>
+        <ul class="timeline-list">
+          <li>
+            <span class="tl-date">10–14 wd</span>
+            <div><strong>Asset Audit &amp; Tagging</strong><p>Every item in your inventory gets a unique tracked identity — a one-time onboarding step.</p></div>
+          </li>
+          <li>
+            <span class="tl-date">Quarterly</span>
+            <div><strong>Asset-Health Report</strong><p>Lifecycle analytics delivered to the Hall Council and Sports Captains.</p></div>
+          </li>
+          <li>
+            <span class="tl-date">On-call</span>
+            <div><strong>48 hr Repair SLA</strong><p>Any fault reported is resolved within ~48 hours via our nearest certified partner network.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/images/yoppi-icon.png" alt="MatchGrade" />
+          <span class="brand-name">MatchGrade</span>
+        </a>
+        <p>Every Asset | Every Game | Anytime. The operating system for institutional sports.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services/Plans</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="services.html">Essential · Plus · Elite</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <li>founder@yoppi.in</li>
+        <li>+91 89794 84758</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> MatchGrade. All rights reserved.</span>
+      <span>Confidential · Sports Infrastructure as a Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/dashboard-sample.js" defer></script>
+</body>
+</html>
